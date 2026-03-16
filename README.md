@@ -1,4 +1,4 @@
-# ⚖️ Life Balance Tracker 1.0
+# ⚖️ Life Balance Tracker 2.0
 
 A free, Excel-based personal productivity and well-being tracker.  
 Monitor your energy, manage your goals, track your time, and develop your skills — all in one place.
