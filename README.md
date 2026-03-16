@@ -84,11 +84,12 @@ It covers every sheet in detail, includes the full well-being glossary, troubles
 
 ## 🤝 Contributing & Feedback
 
-This is version 1.0 — there is plenty of room to improve.  
+This is version 2.0 — but there is plenty of room to improve, as always!.  
 If you have suggestions, find a bug, or want to propose a new feature:
 
 - Open an **Issue** on this repository
 - Or reach out directly on [LinkedIn](https://www.linkedin.com)
+- Submit your feedback through my official form: https://shorturl.at/WoxUt
 
 All feedback is welcome.
 
