@@ -10,7 +10,7 @@ Monitor your energy, manage your goals, track your time, and develop your skills
 The **Life Balance Tracker** is a personal dashboard built in Microsoft Excel.  
 It brings together well-being monitoring, goal management, time tracking, and personal growth metrics into a single, automated file.
 
-Inspired by the structured approach to personal development promoted in the **McKinsey Forward Program**, the tracker applies the same logic organizations use for KPIs and performance dashboards — but at the individual level.
+The tracker applies the same logic organizations use for KPIs and performance dashboards — but at the individual level.
 
 > *"How do I actually know if I'm growing?"*  
 > This tool was built to answer that question — week by week.
@@ -25,7 +25,7 @@ Inspired by the structured approach to personal development promoted in the **Mc
 | 👤 Profile & Purpose | Ikigai-inspired purpose reflection + goal tracker with progress bars |
 | 📊 Assertiveness Quiz | Monthly self-assessment across 10 behavioral dimensions |
 | ⚠️ Risk Assessment | Risk log with auto-calculated ratings using a 5×5 matrix |
-| ⏱️ Progress Calculator | Weekly time tracker across 7 activity categories |
+| ⏱️ Progress Calculator | Weekly time tracker across 6 activity categories |
 | 🔋 Well-Being Dashboard | Personal battery level across 5 dimensions — fully automated |
 | 📈 Weekly Progress | Main data entry sheet — rate 15 indicators weekly |
 | 📉 Statistics | Automated yearly analytics — no manual calculations needed |
@@ -47,12 +47,11 @@ The tracker monitors 5 dimensions, each with 3 indicators:
 ## 🚀 How to Get Started
 
 1. **Download** the `.xlsx` file and open it in Microsoft Excel
-2. **Enable editing** and content when prompted
-3. **Read the Instructions sheet** — it contains the full glossary
-4. **Personalize your profile** in the (NAME) Sheet — fill in your Ikigai and goals
-5. **Start your first Weekly Progress check-in** — rate each dimension from 1 to 5
+2. **Read the Instructions sheet** — it contains the full glossary
+3. **Personalize your profile** in the (NAME) Sheet — fill in your Ikigai and goals
+4. **Start your first Weekly Progress check-in** — rate each dimension from 1 to 5
 
-> ⏱️ It takes about 10 minutes per week.  
+> ⏱️ It takes about 10 minutes per day.  
 > The value is in the trend, not in any single week.
 
 ---
@@ -118,4 +117,4 @@ Built by **Guido Matteo Cavicchioli**
 
 ---
 
-*Version 1.0 — March 2026*
+*Version 2.0 — March 2026*
