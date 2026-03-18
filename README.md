@@ -1,4 +1,4 @@
-# ⚖️ Life Balance Tracker 2.0
+# ⚖️ Progress Tracker 2.0
 
 A free, Excel-based personal productivity and well-being tracker.  
 Monitor your energy, manage your goals, track your time, and develop your skills — all in one place.
@@ -7,7 +7,7 @@ Monitor your energy, manage your goals, track your time, and develop your skills
 
 ## 📌 What is this?
 
-The **Life Balance Tracker** is a personal dashboard built in Microsoft Excel.  
+The **Progress Tracker** is a personal dashboard built in Microsoft Excel.  
 It brings together well-being monitoring, goal management, time tracking, and personal growth metrics into a single, automated file.
 
 The tracker applies the same logic organizations use for KPIs and performance dashboards — but at the individual level.
@@ -25,7 +25,7 @@ The tracker applies the same logic organizations use for KPIs and performance da
 | 👤 Profile & Purpose | Ikigai-inspired purpose reflection + goal tracker with progress bars |
 | 📊 Assertiveness Quiz | Monthly self-assessment across 10 behavioral dimensions |
 | ⚠️ Risk Assessment | Risk log with auto-calculated ratings using a 5×5 matrix |
-| ⏱️ Progress Calculator | Weekly time tracker across 6 activity categories |
+| ⏱️ Progress Calculator | Weekly time tracker across 7 activity categories |
 | 🔋 Well-Being Dashboard | Personal battery level across 5 dimensions — fully automated |
 | 📈 Weekly Progress | Main data entry sheet — rate 15 indicators weekly |
 | 📉 Statistics | Automated yearly analytics — no manual calculations needed |
@@ -46,10 +46,11 @@ The tracker monitors 5 dimensions, each with 3 indicators:
 
 ## 🚀 How to Get Started
 
-1. **Download** the `.xlsx` file and open it in Microsoft Excel
-2. **Read the Instructions sheet** — it contains the full glossary
-3. **Personalize your profile** in the (NAME) Sheet — fill in your Ikigai and goals
-4. **Start your first Weekly Progress check-in** — rate each dimension from 1 to 5
+1. **Download** `Progress_Tracker_2.0.xlsx` and open it in Microsoft Excel
+2. **Enable editing** and content when prompted
+3. **Read the Instructions sheet** — it contains the full glossary
+4. **Personalize your profile** in the (NAME) Sheet — fill in your Ikigai and goals
+5. **Start your first Weekly Progress check-in** — rate each dimension from 1 to 5
 
 > ⏱️ It takes about 10 minutes per day.  
 > The value is in the trend, not in any single week.
@@ -68,29 +69,46 @@ The tracker monitors 5 dimensions, each with 3 indicators:
 
 | File | Description |
 |---|---|
-| `Life_Balance_Tracker_1.0.xlsx` | The tracker file |
-| `Life_Balance_Tracker_Manual.docx` | Complete user manual (8 sections, ~20 pages) |
+| `Progress_Tracker_2.0.xlsx` | The tracker file — current version |
+| `Life_Balance_Tracker_2.0_Guide.pdf` | Complete user guide (8 sections) |
 | `README.md` | This file |
+| `CONTRIBUTING.md` | How to contribute to this project |
+| `CODE_OF_CONDUCT.md` | Community standards and values |
+| `SECURITY.md` | Security policy and data privacy |
 | `LICENSE` | Creative Commons CC BY 4.0 |
 
 ---
 
-## 📖 User Manual
+## 📖 User Guide
 
-A complete user manual is included in this repository (`Life_Balance_Tracker_Manual.docx`).  
+A complete guide is included in this repository (`Life_Balance_Tracker_2.0_Guide.pdf`).  
 It covers every sheet in detail, includes the full well-being glossary, troubleshooting guide, and best practices.
+
+---
+
+## 🔄 Changelog
+
+### Version 2.0 — March 2026
+- Added Assertiveness Quiz with monthly tracking
+- Added Mindset Reset Tool in Well-Being sheet
+- Added personal notes and reflection sections
+- Improved sheet protection and input guidance
+- Added user guide (PDF)
+- Added full GitHub documentation (CONTRIBUTING, SECURITY, CODE_OF_CONDUCT)
+
+### Version 1.0 *(deprecated)*
+- Initial release
 
 ---
 
 ## 🤝 Contributing & Feedback
 
-This is version 2.0 — but there is plenty of room to improve, as always!.  
-If you have suggestions, find a bug, or want to propose a new feature:
+Have a suggestion or found something to improve?  
+Check out [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines, or:
 
 - Open an **Issue** on this repository
-- Or reach out directly on [LinkedIn](https://www.linkedin.com)
+- Reach out directly on [LinkedIn](https://www.linkedin.com/in/guido-matteo-cavicchioli-743089204)
 - Submit your feedback through my official form: https://shorturl.at/WoxUt
-
 All feedback is welcome.
 
 ---
