@@ -4,11 +4,13 @@ Base per un pianificatore di percorsi di trasporto pubblico "tipo JakDojade", pe
 
 ## Cosa fa
 
-- Cerca una fermata di partenza e una di arrivo (autocomplete).
-- Calcola il percorso migliore con i mezzi pubblici (metro/tram/bus), inclusi i cambi.
+- Cerca una fermata di partenza e una di arrivo (autocomplete con navigazione da tastiera), con pulsante per invertire la tratta e opzione «📍 La mia posizione» come punto di partenza (geolocalizzazione).
+- Calcola i percorsi migliori con i mezzi pubblici (metro/tram/bus), inclusi i cambi; i risultati sono ordinati per orario di arrivo e mostrano una timeline dettagliata tappa per tappa con icone per tipo di mezzo.
 - Mostra l'itinerario su una mappa (Leaflet + OpenStreetMap) con le tappe colorate per linea.
+- Ricorda le ultime 5 ricerche (localStorage) per rilanciarle con un tocco.
+- **Indennizzo per ritardo**: salva un viaggio pianificato («💾 Salva viaggio»), poi in «🎫 I miei viaggi» inserisci l'orario di arrivo effettivo — l'app verifica le soglie della Carta della Mobilità ATM (≥15 min: biglietto ordinario; ≥30 min: biglietto giornaliero) e genera una richiesta di indennizzo precompilata (email o copia negli appunti). Le regole sono per-operatore e configurabili (`lib/compensation.ts`).
 
-Non incluso in questo MVP (vedi "Prossimi passi"): orari in tempo reale, biglietti, altre città.
+Non incluso in questo MVP (vedi "Prossimi passi"): orari in tempo reale, biglietti, altre città. Nota: senza dati real-time il ritardo è dichiarato dall'utente; l'invio della richiesta va completato sui canali ufficiali dell'operatore.
 
 ## Stack
 
@@ -22,18 +24,22 @@ Non incluso in questo MVP (vedi "Prossimi passi"): orari in tempo reale, bigliet
 
 ```
 app/
-  api/stops/search/route.ts   # autocomplete fermate
-  api/plan/route.ts           # pianificazione percorso
-  page.tsx                    # UI principale
-components/                   # form di ricerca, lista itinerari, mappa
+  api/stops/search/route.ts        # autocomplete fermate
+  api/plan/route.ts                # pianificazione percorso (dedup + ordinamento)
+  api/compensation/check/route.ts  # verifica soglie indennizzo
+  page.tsx                         # UI principale (tab Cerca / I miei viaggi)
+components/                        # form di ricerca, lista itinerari, mappa, i miei viaggi
 lib/
   db.ts            # connessione SQLite + schema
   gtfs-import.ts   # parsing GTFS -> SQLite (incluso calcolo trasferimenti a piedi tra fermate vicine)
   routing.ts       # motore di pianificazione (RAPTOR semplificato)
   geo.ts           # haversine, tempi di cammino
+  compensation.ts  # regole indennizzo per operatore (default: ATM Milano)
+  format.ts        # formattazione orari/durate, icone per route_type
+  storage.ts       # viaggi salvati + ricerche recenti (localStorage, useSyncExternalStore)
 scripts/import-gtfs.ts        # CLI di import
 data/sample-milano-gtfs/      # dataset di esempio (vedi sotto)
-test/                         # fixture GTFS sintetica + test del motore di routing
+test/                         # fixture GTFS sintetica + test routing e indennizzo
 ```
 
 ## Avvio rapido
@@ -67,7 +73,8 @@ npm run build
 
 ## Prossimi passi (fuori scope per questo MVP)
 
-- Orari in tempo reale (GTFS-RT).
+- Orari in tempo reale (GTFS-RT) — sbloccherebbe anche la verifica **automatica** del ritardo per l'indennizzo, oggi dichiarato dall'utente.
+- Integrazione con i canali ufficiali dell'operatore per l'invio diretto della richiesta di indennizzo.
 - Mappa completa di tutte le linee/fermate (oggi si mostra solo l'itinerario cercato).
 - Account utente e biglietti.
-- Altre città italiane (la struttura dati/import è pensata per essere riusabile: basta un altro feed GTFS).
+- Altre città italiane (la struttura dati/import è pensata per essere riusabile: basta un altro feed GTFS e un oggetto `CompensationRules` per l'operatore locale).

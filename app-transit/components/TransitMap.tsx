@@ -18,10 +18,12 @@ function FitBounds({ points }: { points: [number, number][] }) {
   const map = useMap();
   useEffect(() => {
     if (points.length === 0) return;
+    // animate: false — l'animazione può proseguire dopo lo smontaggio della
+    // mappa (cambio tab) e far esplodere Leaflet con "_leaflet_pos undefined"
     if (points.length === 1) {
-      map.setView(points[0], 15);
+      map.setView(points[0], 15, { animate: false });
     } else {
-      map.fitBounds(points, { padding: [40, 40] });
+      map.fitBounds(points, { padding: [40, 40], animate: false });
     }
   }, [map, points]);
   return null;

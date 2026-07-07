@@ -34,6 +34,7 @@ export interface ItineraryLeg {
   routeShortName?: string;
   routeLongName?: string;
   routeColor?: string;
+  routeType?: number;
   tripHeadsign?: string;
 }
 
@@ -296,7 +297,9 @@ function reconstructItinerary(
 ): Itinerary {
   const destinationCandidates = destination.candidates;
   const stopInfoStmt = db.prepare("SELECT stop_name, stop_lat, stop_lon FROM stops WHERE stop_id = ?");
-  const routeStmt = db.prepare("SELECT route_short_name, route_long_name, route_color FROM routes WHERE route_id = ?");
+  const routeStmt = db.prepare(
+    "SELECT route_short_name, route_long_name, route_color, route_type FROM routes WHERE route_id = ?"
+  );
   const stopInfoCache = new Map<string, { stop_name: string; stop_lat: number; stop_lon: number }>();
   const stopInfo = (id: string) => {
     if (!stopInfoCache.has(id)) {
@@ -338,7 +341,7 @@ function reconstructItinerary(
   for (const p of chain) {
     if (p.type === "transit") {
       const route = routeStmt.get(p.routeId) as
-        | { route_short_name: string; route_long_name: string; route_color: string }
+        | { route_short_name: string; route_long_name: string; route_color: string; route_type: number }
         | undefined;
       const boardInfo = stopInfo(p.boardStop);
       const alightInfo = stopInfo(p.alightStop);
@@ -357,6 +360,7 @@ function reconstructItinerary(
         routeShortName: route?.route_short_name,
         routeLongName: route?.route_long_name,
         routeColor: route?.route_color,
+        routeType: route?.route_type,
       });
     } else {
       const fromInfo = stopInfo(p.fromStop);

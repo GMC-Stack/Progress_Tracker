@@ -43,5 +43,14 @@ export async function POST(request: Request) {
     departureSeconds: toSecondsSinceMidnight(body.time),
   });
 
-  return NextResponse.json({ itineraries });
+  const seen = new Set<string>();
+  const deduped = itineraries.filter((it) => {
+    const key = `${it.departureSeconds}-${it.arrivalSeconds}-${it.transfers}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+  deduped.sort((a, b) => a.arrivalSeconds - b.arrivalSeconds || a.transfers - b.transfers);
+
+  return NextResponse.json({ itineraries: deduped });
 }
